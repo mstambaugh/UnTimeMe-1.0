@@ -5,10 +5,10 @@ import { LineChart } from 'react-native-chart-kit';
 const EmojiGraph = props => {
 
   const linedata = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    labels: ['sad', 'happ', 'mad', 'blush', 'cry'],
     datasets: [
       {
-        data: [20, 45, 28, 80, 99, 43],
+        data: [20, 45, 28, 80, 55],
         strokeWidth: 2, // optional
       },
     ],
@@ -24,13 +24,13 @@ const EmojiGraph = props => {
         width={300}
         // width={Dimensions.get('window').width} // from react-native
         height={220}
-        yAxisLabel={'$'}
+        yAxisLabel={'Time'}
         chartConfig={{
-          backgroundColor: '#e26a00',
-          backgroundGradientFrom: '#fb8c00',
-          backgroundGradientTo: '#ffa726',
+          backgroundColor: 'black',
+          backgroundGradientFrom: 'black',
+          backgroundGradientTo: 'gray',
           decimalPlaces: 2, // optional, defaults to 2dp
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+          color: (opacity = .75) => `rgba(187, 255, 68, ${opacity})`,
           style: {
             borderRadius: 16
           }
