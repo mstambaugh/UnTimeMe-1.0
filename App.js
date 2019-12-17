@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Button, View, FlatList } from 'react-native';
 
 import EmojiInput from './components/EmojiInput';
-import EmojiHistory from './components/EmojiHistory';
+// import EmojiHistory from './components/EmojiHistory';
+import EmojiGraph from './components/EmojiGraph';
 
 
 
@@ -36,6 +37,9 @@ export default function App() {
         data={emojiInputs}
         renderItem={itemData => <EmojiHistory id={itemData.item.id} title={itemData.item.value} />}
       />
+      <View>
+        <EmojiGraph />
+      </View>
     </View>
   );
 }

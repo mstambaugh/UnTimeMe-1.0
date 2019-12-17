@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Modal } from 'react-native';
- 
+
 const EmojiInput = props => {
  
  const [enteredEmoji, setEnteredEmoji] = useState('');
@@ -29,7 +29,7 @@ const EmojiInput = props => {
          </View>
          <View style={styles.button}>
            <Button title="ADD" onPress={addEmojiHandler} />
-         </View>
+         </View> 
        </View>
      </View>
    </Modal>
