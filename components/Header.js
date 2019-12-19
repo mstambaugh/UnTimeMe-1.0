@@ -17,12 +17,13 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     backgroundColor: Colors.primary,
     borderBottomColor: Colors.accentOne,
-    borderBottomWidth: 3,
+    borderBottomWidth: 6,
     alignItems: 'center',
     justifyContent: 'center'
   },
+
   headerTitle: {
-    color: 'white',
+    color: Colors.accentOne,
     paddingVertical: 10,
     fontSize: 60,
     fontFamily: 'AmaticSC-Bold', 
