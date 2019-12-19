@@ -1,9 +1,16 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Button } from 'react-native';
 
 const TimerScreen = props => {
   return (
-    <View style={{ ...styles.card, ...props.style }}>{props.children}</View>
+    <View style={{ ...styles.card, ...props.style }}>
+      <Button title='End Session' onPress={() => {
+        props.navigation.navigate({
+          routeName: 'HomeScreen'
+        });
+      }} />
+    </View>
+
   );
 };
 

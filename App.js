@@ -26,7 +26,7 @@ export default function App() {
       />
     );
   }
-  return <UnTimeMeNavigator />;
+  return <UnTimeMeNavigator style={styles.screen}/>;
 }
 
     // <View style={styles.screen}>
@@ -36,12 +36,12 @@ export default function App() {
 
     // </View>
 
-// now using stylesheet object styling
-// const styles = StyleSheet.create({
-//   screen: {
-//     flex: 1
-//   },
-// });
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1
+  },
+});
 
 
 

@@ -12,7 +12,14 @@ const HomeScreen = props => {
         <Text style={styles.text}>Will you do a little bit of work?</Text>
         <View style={styles.buttonContainer}>
           <Button title="i guess" style={styles.button} onPress={() => {
-            props.navigation.navigate({routeName: 'EmojiInput' }); 
+            props.navigation.navigate({
+              routeName: 'EmojiInput' 
+            }); 
+          }} /> 
+          <Button title="work accomplished" style={styles.button} onPress={() => {
+            props.navigation.navigate({
+              routeName: 'EmojiGraph'
+            });
           }} /> 
         </View>
       </View>
