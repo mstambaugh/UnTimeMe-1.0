@@ -1,52 +1,64 @@
 import React, { useState } from 'react';
-import { StyleSheet, Button, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
 import EmojiInput from './components/EmojiInput';
+import Header from './components/Header';
+import Colors from './constants/colors';
 // import EmojiHistory from './components/EmojiHistory';
-import EmojiGraph from './components/EmojiGraph';
-
-
+// import EmojiGraph from './components/EmojiGraph';
+// import HomeScreen from './components/HomeScreen';
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'AmaticSC-Bold': require('./assets/fonts/AmaticSC-Bold.ttf'),
+    'AmaticSC-Regular': require('./assets/fonts/AmaticSC-Regular.ttf')
+  });
+};
 
 export default function App() {
-  const [emojiInputs, setEmojiInputs] = useState([]);
-  const [isInputEmojiMode, setIsInputEmojiMode] = useState(false);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
-  const addEmojiHandler = emojiChoice => {
-    setEmojiInputs(currentEmojis => [
-      ...currentEmojis,
-      { id: Math.random().toString(), value: emojiChoice }
-    ]);
-    setIsInputEmojiMode(false);
-  };
-
-  const cancelEmojiInputHandler = () => {
-    setIsInputEmojiMode(false);
-  };
-
-
+  if (!dataLoaded) {
+    return (
+      <AppLoading
+        startAsync = {fetchFonts}
+        onFinish={() => setDataLoaded(true)}
+      />
+    );
+  }
   return (
     <View style={styles.screen}>
-      <Button title="Start working" onPress={() => setIsInputEmojiMode(true)} />
-      <EmojiInput
-        visible={isInputEmojiMode}
-        onInputEmoji={addEmojiHandler}
-        onCancel={cancelEmojiInputHandler}
-      />
-      <FlatList
-        keyExtractor={(item, index) => item.id}
-        data={emojiInputs}
-        renderItem={itemData => <EmojiHistory id={itemData.item.id} title={itemData.item.value} />}
-      />
-      <View>
-        <EmojiGraph />
+      <View style={styles.header}>
+        <Header />
       </View>
+      <EmojiInput />
     </View>
   );
 }
 // now using stylesheet object styling
 const styles = StyleSheet.create({
   screen: {
-    padding: 50
-  }
+    flex: 1
+  },
 });
+
+
+
+
+// const [inputEmojiMode, setIsInputEmojiMode] = useState(false);
+// const [emojiInputs, setEmojiInputs] = useState([]);
+
+// const isInputEmojiHandler = () => {
+//   setIsInputEmojiMode(true);
+// };
+
+// const inputEmojiHandler = emojiChoice => {
+//   setEmojiInputs(currentEmojis => [
+//     ...currentEmojis,
+//     { id: Math.random().toString(), value: emojiChoice }
+//   ]);
+//   setIsInputEmojiMode(false);
+
+// let content= <HomeScreen onStartWorking={isInputEmojiHandler} />
 

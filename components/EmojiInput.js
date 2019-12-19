@@ -1,62 +1,55 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Modal } from 'react-native';
+import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
+
+import EmojiButton from '../components/EmojiButton';
 
 const EmojiInput = props => {
- 
- const [enteredEmoji, setEnteredEmoji] = useState('');
- 
- const emojiInputHandler = (enteredText) => {
-   setEnteredEmoji(enteredText);
- };
- 
- const addEmojiHandler = () => {
-   props.onInputEmoji(enteredEmoji);
-   setEnteredEmoji('');
- };
- 
- return (
-   <Modal visible={props.visible} animationType="slide">
-     <View style={styles.inputContainer}>
-       <TextInput
-         placeholder="How are you?"
-         style={styles.input}
-         onChangeText={emojiInputHandler}
-         value={enteredEmoji}
-       />
-       <View style={styles.buttonContainer}>
-         <View style={styles.button}>
-           <Button title="CANCEL" color="red" onPress={props.onCancel} />
-         </View>
-         <View style={styles.button}>
-           <Button title="ADD" onPress={addEmojiHandler} />
-         </View> 
-       </View>
-     </View>
-   </Modal>
- );
-};
- 
-const styles = StyleSheet.create({
- inputContainer: {
-   flex: 1,
-   justifyContent: 'center',
-   alignItems: 'center'
- },
- input: {
-   borderColor: 'black',
-   borderWidth: 2,
-   padding: 10,
-   width: '80%',
-   marginBottom: 10
- },
- buttonContainer: {
-   flexDirection: 'row',
-   justifyContent: 'space-around',
-   width: '80%'
- },
- button: {
-    width: '40%'
-  }
-});
 
-export default EmojiInput;
+  const [enteredEmoji, setEnteredEmoji] = useState('');
+
+  const emojiInputHandler = () => {
+    setEnteredEmoji();
+  };
+
+  const addEmojiHandler = () => {
+    props.onInputEmoji(enteredEmoji);
+  };
+
+  return (
+    <View style={styles.screen}>
+      <View style={styles.whiteSpace}></View>
+      <View style={styles.firstRowButtonContainer}>
+        <View>
+          <EmojiButton />
+          </View>
+          <View>
+            <EmojiButton />
+          </View>
+        </View>
+      </View>
+      );
+     };
+     
+const styles = StyleSheet.create({
+    screen: {
+    flex: 1,
+    padding: 30
+  },
+  whiteSpace: {
+    flex: .4
+  },
+
+  firstRowButtonContainer: {
+    flex: .2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%'
+  },
+  button: {
+
+      },
+    
+      
+    });
+    
+    export default EmojiInput;
