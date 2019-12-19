@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
+
 import Colors from '../constants/colors';
+
 
 const Header = props => {
   return (
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     color: Colors.accentOne,
     paddingVertical: 10,
     fontSize: 60,
-    fontFamily: 'AmaticSC-Bold', 
+    fontFamily: 'Mansalva-Regular', 
   }
 
 });

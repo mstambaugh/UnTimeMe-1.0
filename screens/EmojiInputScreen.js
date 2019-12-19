@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 import EmojiButton from '../components/EmojiButton';
-
+import Header from '../components/Header';
 const EmojiInput = props => {
 
   const [enteredEmoji, setEnteredEmoji] = useState('');
@@ -17,10 +17,13 @@ const EmojiInput = props => {
 
   return (
     <View style={styles.screen}>
+      <Header />
       <View style={styles.whiteSpace}></View>
       <View style={styles.firstRowButtonContainer}>
         <View>
-          <EmojiButton />
+          <EmojiButton title= "ok" onPress={() => { 
+            props.navigation.navigate({routeName: 'TimerScreen' });
+          }} />
           </View>
           <View>
             <EmojiButton />

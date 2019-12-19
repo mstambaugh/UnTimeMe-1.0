@@ -3,16 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
-import EmojiInput from './components/EmojiInput';
+import UnTimeMeNavigator from './navigation/UnTimeMeNavigator';
+
 import Header from './components/Header';
 import Colors from './constants/colors';
-// import EmojiHistory from './components/EmojiHistory';
-// import EmojiGraph from './components/EmojiGraph';
-// import HomeScreen from './components/HomeScreen';
 const fetchFonts = () => {
   return Font.loadAsync({
     'AmaticSC-Bold': require('./assets/fonts/AmaticSC-Bold.ttf'),
-    'AmaticSC-Regular': require('./assets/fonts/AmaticSC-Regular.ttf')
+    'AmaticSC-Regular': require('./assets/fonts/AmaticSC-Regular.ttf'),
+    'Mansalva-Regular': require('./assets/fonts/Mansalva-Regular.ttf'),
   });
 };
 
@@ -27,21 +26,22 @@ export default function App() {
       />
     );
   }
-  return (
-    <View style={styles.screen}>
-      <View style={styles.header}>
-        <Header />
-      </View>
-      <EmojiInput />
-    </View>
-  );
+  return <UnTimeMeNavigator />;
 }
+
+    // <View style={styles.screen}>
+    //   <View style={styles.header}>
+    //     <Header />
+    //   </View>
+
+    // </View>
+
 // now using stylesheet object styling
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1
-  },
-});
+// const styles = StyleSheet.create({
+//   screen: {
+//     flex: 1
+//   },
+// });
 
 
 
