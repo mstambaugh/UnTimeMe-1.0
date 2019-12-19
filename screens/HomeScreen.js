@@ -7,23 +7,25 @@ import Header from '../components/Header';
 const HomeScreen = props => {
   return (
     <View style={styles.screen}>
-      <Header />
       <View>
-        <Text style={styles.text}>Will you do a little bit of work?</Text>
+        <Text style={styles.text}>Want to do a little bit of work?</Text>
         <View style={styles.buttonContainer}>
-          <Button title="i guess" style={styles.button} onPress={() => {
-            props.navigation.navigate({
-              routeName: 'EmojiInput' 
-            }); 
-          }} /> 
-          <Button title="work accomplished" style={styles.button} onPress={() => {
-            props.navigation.navigate({
-              routeName: 'EmojiGraph'
-            });
-          }} /> 
+          <View style={styles.buttonConfig}>
+            <Button title="FINE" style={styles.button} onPress={() => {
+              props.navigation.navigate({
+                routeName: 'EmojiInput' 
+              }); 
+            }} /> 
+          </View>
+          <View style={styles.buttonConfig}></View>
+            <Button title="view " style={styles.button} onPress={() => {
+              props.navigation.navigate({
+                routeName: 'EmojiGraph'
+              });
+            }} /> 
+          </View>
         </View>
       </View>
-    </View>
   )
 };
 
@@ -48,8 +50,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     fontFamily: 'AmaticSC-Regular'
   },
+  buttonConfig: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 20,
+    width: 100,
+    maxWidth: '80%'
+  },
   button: {
-    width: 100
+    backgroundColor: Colors.primary,
   },
   
 

@@ -26,7 +26,12 @@ export default function App() {
       />
     );
   }
-  return <UnTimeMeNavigator style={styles.screen}/>;
+  return (
+    <View style={styles.screen} >
+      <Header />
+      <UnTimeMeNavigator />
+    </View>
+  );
 }
 
     // <View style={styles.screen}>
@@ -39,7 +44,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1
+    flex: 1, 
+    height: '100%'
   },
 });
 

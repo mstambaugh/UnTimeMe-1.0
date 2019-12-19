@@ -30,7 +30,6 @@ const EmojiInput = props => {
 
   return (
     <View style={styles.screen}>
-      <Header />
       <View style={styles.whiteSpace}></View>
 
       <View style={styles.firstRowButtonContainer}>
@@ -108,7 +107,7 @@ const EmojiInput = props => {
         </View>
       </View>
 
-      <View>
+      <View style={styles.button}>
         <Button title="start timer" onPress={() => {
           props.navigation.navigate({
             routeName: 'TimerScreen'
@@ -136,16 +135,21 @@ const styles = StyleSheet.create({
   //   borderRadius: 10 
   // },
   firstRowButtonContainer: {
-    flex: .2,
+    flex: .3,
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
     backgroundColor: '#E0E0E0',
     borderColor: '#E0E0E0',
     padding: 5,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 10,
   },
   secondRowButtonContainer: {
-    flex: .2,
+    flex: .3,
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
@@ -155,7 +159,12 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    flex: .1
+    flex: .1,
+    width: '20%',
+    alignSelf: 'center',
+    flexDirection: 'row',
+    fontFamily: ''
+
   },
 
 
