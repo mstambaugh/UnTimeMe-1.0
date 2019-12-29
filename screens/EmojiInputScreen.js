@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#1c1c1c'
   },
   whiteSpace: {
-    flex: .4
+    flex: .4,
+    backgroundColor: '#1c1c1c'
   },
   // fakeKeyboard: {
   //   backgroundColor: '#E0E0E0',
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
     flex: .3,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
+    width: '80%',
     backgroundColor: '#E0E0E0',
     borderColor: '#E0E0E0',
     padding: 5,
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
     flex: .3,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
+    width: '80%',
     backgroundColor: '#E0E0E0',
     borderColor: '#E0E0E0',
     padding: 5,

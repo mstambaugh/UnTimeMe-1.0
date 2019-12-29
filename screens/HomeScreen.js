@@ -10,15 +10,12 @@ const HomeScreen = props => {
       <View>
         <Text style={styles.text}>Want to do a little bit of work?</Text>
         <View style={styles.buttonContainer}>
-          <View style={styles.buttonConfig}>
             <Button title="FINE" style={styles.button} onPress={() => {
               props.navigation.navigate({
                 routeName: 'EmojiInput' 
               }); 
             }} /> 
-          </View>
-          <View style={styles.buttonConfig}></View>
-            <Button title="view " style={styles.button} onPress={() => {
+            <Button title="view" style={styles.button} onPress={() => {
               props.navigation.navigate({
                 routeName: 'EmojiGraph'
               });
@@ -34,32 +31,32 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 30,
+    padding: 30, 
     backgroundColor: '#1c1c1c'
   },
   text: {
     color: Colors.accentOne,
     paddingVertical: 10,
     fontSize: 40,
-    fontFamily: 'AmaticSC-Regular'
+    fontFamily: 'AmaticSC-Regular', 
+    textAlign: 'center'
   },
   buttonContainer: {
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    alignContent: 'center',
     paddingHorizontal: 15,
-    fontFamily: 'AmaticSC-Regular'
-  },
-  buttonConfig: {
-    flexDirection: 'row',
+    fontFamily: 'AmaticSC-Regular',
     justifyContent: 'space-around',
     marginTop: 20,
-    width: 100,
     maxWidth: '80%'
-  },
-  button: {
-    backgroundColor: Colors.primary,
-  },
+  }
+  // button: {
+  //   backgroundColor: Colors.primary,
+  //   fontFamily: 'AmaticSC-Regular',
+
+  // },
   
 
 

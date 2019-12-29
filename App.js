@@ -29,24 +29,23 @@ export default function App() {
   return (
     <View style={styles.screen} >
       <Header />
-      <UnTimeMeNavigator />
+      <UnTimeMeNavigator style={styles.visibleContent}/>
     </View>
   );
 }
 
-    // <View style={styles.screen}>
-    //   <View style={styles.header}>
-    //     <Header />
-    //   </View>
-
-    // </View>
-
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1, 
-    height: '100%'
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#1c1c1c'
   },
+  visibleContent: {
+    backgroundColor: '#1c1c1c',
+    flex: .5
+  }
 });
 
 
